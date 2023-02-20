@@ -1,13 +1,12 @@
-/*  ROCK PAPER SCISSORS GAME    
+/*  ROCK PAPER SCISSORS LIZARD SPOCK GAME    
     STEPS:
     1.  Get computer choice
     2.  Get user's choice
     3.  See who won - play round - if computer get scissors then check what user gets in a if else loop
-    4.  Do you wanna play again
 */
 
 function getComputerChoice() {
-    rand = Math.floor(Math.random() * 3);
+    rand = Math.floor(Math.random() * 5);
 
     if (rand === 0){
         choice = "Rock";
@@ -15,59 +14,83 @@ function getComputerChoice() {
     else if(rand === 1){
         choice = ("Paper");
     }
-    else {
+    else if (rand === 2){
         choice = ("Scissors");
+    }
+    else if (rand === 3){
+        choice = ("Lizard");
+    }
+    else if (rand === 4){
+        choice = ("Spock");
     }
 
     return choice;
 }
 
 function playRound(computerSelection, userSelection){
-    
+
     if (computerSelection === "Rock"){
         if (userSelection === "rock"){
-            whoWon = "Its a tie!";
+            whoWon = "It's a tie!";
         }
         else if (userSelection === "paper"){
-            whoWon = "You win! Paper beats rock!";
-        }
-        else if (userSelection === "scissors") {
-            whoWon = "You loose! Rock beats scissors";
-        }
-        else{
-            return 0;
-        }
-    }
-    else if (computerSelection === "Paper"){
-        if (userSelection === "paper"){
-            whoWon = "Its a tie!";
+            whoWon = "You won! Paper covers rock!";
         }
         else if (userSelection === "scissors"){
-            whoWon = "You win! Scissors beats paper!";
+            whoWon = "You loose! Rock crushes scissors!"
         }
-        else if (userSelection === "rock"){
-            whoWon = "You loose! Paper beats rock!";
+        else if (userSelection === "lizard"){
+            whoWon = "You loose! Rock crushes lizard!"
         }
-        else{
-            return 0;
-        }
-    }
-    else {
-        if (userSelection === "scissors"){
-            whoWon = "Its a tie!";
-        }
-        else if (userSelection === "paper"){
-            whoWon = "You loose! Scissors beats paper!";
-        }
-        else if (userSelection === "rock"){
-            whoWon = "You win! Rock beats Scissors!";
-        }
-        else{
-            return 0;
+        else if (userSelection === "spock"){
+            whoWon = "You win! Spock vaporizes rock!"
         }
     }
     
-    return whoWon;
+    // if (computerSelection === "Rock"){
+    //     if (userSelection === "rock"){
+    //         whoWon = "Its a tie!";
+    //     }
+    //     else if (userSelection === "paper"){
+    //         whoWon = "You win! Paper beats rock!";
+    //     }
+    //     else if (userSelection === "scissors") {
+    //         whoWon = "You loose! Rock beats scissors";
+    //     }
+    //     else{
+    //         return 0;
+    //     }
+    // }
+    // else if (computerSelection === "Paper"){
+    //     if (userSelection === "paper"){
+    //         whoWon = "Its a tie!";
+    //     }
+    //     else if (userSelection === "scissors"){
+    //         whoWon = "You win! Scissors beats paper!";
+    //     }
+    //     else if (userSelection === "rock"){
+    //         whoWon = "You loose! Paper beats rock!";
+    //     }
+    //     else{
+    //         return 0;
+    //     }
+    // }
+    // else {
+    //     if (userSelection === "scissors"){
+    //         whoWon = "Its a tie!";
+    //     }
+    //     else if (userSelection === "paper"){
+    //         whoWon = "You loose! Scissors beats paper!";
+    //     }
+    //     else if (userSelection === "rock"){
+    //         whoWon = "You win! Rock beats Scissors!";
+    //     }
+    //     else{
+    //         return 0;
+    //     }
+    // }
+    
+    // return whoWon;
 }
 
 // console.log(computerSelection);
