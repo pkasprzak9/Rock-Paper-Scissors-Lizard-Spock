@@ -37,14 +37,84 @@ function playRound(computerSelection, userSelection){
             whoWon = "You won! Paper covers rock!";
         }
         else if (userSelection === "scissors"){
-            whoWon = "You loose! Rock crushes scissors!"
+            whoWon = "You loose! Rock crushes scissors!";
         }
         else if (userSelection === "lizard"){
-            whoWon = "You loose! Rock crushes lizard!"
+            whoWon = "You loose! Rock crushes lizard!";
         }
         else if (userSelection === "spock"){
-            whoWon = "You win! Spock vaporizes rock!"
+            whoWon = "You win! Spock vaporizes rock!";
         }
+    }
+    else if (computerSelection === "Paper"){
+        if (userSelection === "rock"){
+            whoWon = "You loose! Paper covers rock!";
+        }
+        else if (userSelection === "paper"){
+            whoWon = "It's a tie!";
+        }
+        else if (userSelection === "scissors"){
+            whoWon = "You win! Scissors cuts paper!";
+        }
+        else if (userSelection === "lizard"){
+            whoWon = "You win! Lizard eats paper!";
+        }
+        else if (userSelection === "spock"){
+            whoWon = "You loose! Paper disproves spock!";
+        }
+    }
+    else if (computerSelection === "Scissors"){
+        if (userSelection === "rock"){
+            whoWon = "You win! Rock crushes scissors!";
+        }
+        else if (userSelection === "paper"){
+            whoWon = "You loose! Scissors cuts paper!";
+        }
+        else if (userSelection === "scissors"){
+            whoWon = "It's a tie!";
+        }
+        else if (userSelection === "lizard"){
+            whoWon = "You loose! Scissors decapitates lizard!";
+        }
+        else if (userSelection === "spock"){
+            whoWon = "You win! Spock smashes scissors!";
+        }
+    }
+    else if (computerSelection === "Lizard"){
+        if (userSelection === "rock"){
+            whoWon = "You win! Rock crushes lizard!";
+        }
+        else if (userSelection === "paper"){
+            whoWon = "You loose! Lizard eats paper!";
+        }
+        else if (userSelection === "scissors"){
+            whoWon = "You win! Scissors decapitates lizard!";
+        }
+        else if (userSelection === "lizard"){
+            whoWon = "It's a tie!";
+        }
+        else if (userSelection === "spock"){
+            whoWon = "You loose! Lizard poisons spock!";
+        }
+    }
+    else if (computerSelection === "Spock"){
+        if (userSelection === "rock"){
+            whoWon = "You loose! Spock vaporizes rock!";
+        }
+        else if (userSelection === "paper"){
+            whoWon = "You win! Paper disproves spock!";
+        }
+        else if (userSelection === "scissors"){
+            whoWon = "You win! Spock smashes scissors!";
+        }
+        else if (userSelection === "lizard"){
+            whoWon = "You loose! Lizard poisons spock!";
+        }
+        else if (userSelection === "spock"){
+            whoWon = "It's a tie!";
+        }
+    }
+    return whoWon;
     }
     
     // if (computerSelection === "Rock"){
