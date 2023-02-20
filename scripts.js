@@ -22,46 +22,90 @@ function getComputerChoice() {
     return choice;
 }
 
-console.log(getComputerChoice());
-
-
 function playRound(computerSelection, userSelection){
     
     if (computerSelection === "Rock"){
         if (userSelection === "rock"){
-            console.log("Its a tie!")
+            whoWon = "Its a tie!";
         }
         else if (userSelection === "paper"){
-            console.log("You win! Paper beats rock!")
+            whoWon = "You win! Paper beats rock!";
         }
-        else {
-            console.log("You loose! Rock beats scissors")
+        else if (userSelection === "scissors") {
+            whoWon = "You loose! Rock beats scissors";
+        }
+        else{
+            return 0;
         }
     }
     else if (computerSelection === "Paper"){
         if (userSelection === "paper"){
-            console.log("Its a tie!")
+            whoWon = "Its a tie!";
         }
         else if (userSelection === "scissors"){
-            console.log("You win! Scissors beats paper!")
+            whoWon = "You win! Scissors beats paper!";
         }
-        else {
-            console.log("You loose! Paper beats rock!")
+        else if (userSelection === "rock"){
+            whoWon = "You loose! Paper beats rock!";
+        }
+        else{
+            return 0;
         }
     }
     else {
         if (userSelection === "scissors"){
-            console.log("Its a tie!")
+            whoWon = "Its a tie!";
         }
         else if (userSelection === "paper"){
-            console.log("You loose! Scissors beats paper!")
+            whoWon = "You loose! Scissors beats paper!";
         }
-        else {
-            console.log("You win! Rock beats Scissors!")
+        else if (userSelection === "rock"){
+            whoWon = "You win! Rock beats Scissors!";
+        }
+        else{
+            return 0;
         }
     }
+    
+    return whoWon;
 }
 
-playRound(getComputerChoice(), "paper");
+// console.log(computerSelection);
+// console.log(userSelection);
+// console.log(playRound(computerSelection, userSelection.toLowerCase()));
 
+function game() {
+    computerScore = 0;
+    userScore = 0;
+    for (i = 0; i < 5; i++)
+    {
+        const computerSelection = getComputerChoice();
+        const userSelection = prompt("Choose your weapon (rock, paper, scissors)");
+        console.log(computerSelection, userSelection);
+        round = playRound(computerSelection, userSelection.toLowerCase());
+        console.log(round);
 
+        if (round.startsWith("You win")){
+            userScore += 1;
+        }
+        else if (round.startsWith("You loose")) {
+            computerScore += 1;
+        }
+
+        console.log(computerScore, userScore);
+    }
+
+    if (computerScore > userScore){
+        winner = "computer";
+    }
+    else if (computerScore < userScore){
+        winner = "user";
+    }
+    else {
+        winner = "Nobody"
+    }
+
+    console.log(winner + " is a winner!");
+}
+
+game();
