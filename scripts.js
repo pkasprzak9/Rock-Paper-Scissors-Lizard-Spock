@@ -105,10 +105,10 @@ function playRound(computerSelection, userSelection){
             whoWon = "You win! Paper disproves spock!";
         }
         else if (userSelection === "scissors"){
-            whoWon = "You win! Spock smashes scissors!";
+            whoWon = "You loose! Spock smashes scissors!";
         }
         else if (userSelection === "lizard"){
-            whoWon = "You loose! Lizard poisons spock!";
+            whoWon = "You win! Lizard poisons spock!";
         }
         else if (userSelection === "spock"){
             whoWon = "It's a tie!";
@@ -117,55 +117,10 @@ function playRound(computerSelection, userSelection){
     return whoWon;
     }
     
-    // if (computerSelection === "Rock"){
-    //     if (userSelection === "rock"){
-    //         whoWon = "Its a tie!";
-    //     }
-    //     else if (userSelection === "paper"){
-    //         whoWon = "You win! Paper beats rock!";
-    //     }
-    //     else if (userSelection === "scissors") {
-    //         whoWon = "You loose! Rock beats scissors";
-    //     }
-    //     else{
-    //         return 0;
-    //     }
-    // }
-    // else if (computerSelection === "Paper"){
-    //     if (userSelection === "paper"){
-    //         whoWon = "Its a tie!";
-    //     }
-    //     else if (userSelection === "scissors"){
-    //         whoWon = "You win! Scissors beats paper!";
-    //     }
-    //     else if (userSelection === "rock"){
-    //         whoWon = "You loose! Paper beats rock!";
-    //     }
-    //     else{
-    //         return 0;
-    //     }
-    // }
-    // else {
-    //     if (userSelection === "scissors"){
-    //         whoWon = "Its a tie!";
-    //     }
-    //     else if (userSelection === "paper"){
-    //         whoWon = "You loose! Scissors beats paper!";
-    //     }
-    //     else if (userSelection === "rock"){
-    //         whoWon = "You win! Rock beats Scissors!";
-    //     }
-    //     else{
-    //         return 0;
-    //     }
-    // }
-    
-    // return whoWon;
-}
-
-// console.log(computerSelection);
-// console.log(userSelection);
-// console.log(playRound(computerSelection, userSelection.toLowerCase()));
+// computerSelection = getComputerChoice();
+// userSelection = "lizard";
+// console.log(computerSelection, userSelection)
+// console.log(playRound(computerSelection, userSelection));
 
 function game() {
     computerScore = 0;
@@ -173,7 +128,7 @@ function game() {
     for (i = 0; i < 5; i++)
     {
         const computerSelection = getComputerChoice();
-        const userSelection = prompt("Choose your weapon (rock, paper, scissors)");
+        const userSelection = prompt("Choose your weapon (rock, paper, scissors, lizard, spock)");
         console.log(computerSelection, userSelection);
         round = playRound(computerSelection, userSelection.toLowerCase());
         console.log(round);
