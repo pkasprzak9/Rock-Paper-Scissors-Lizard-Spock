@@ -1,2 +1,2 @@
-# projectRockPaperScissors
+# projectRockPaperScissorsLizardSpock
 TOP project
