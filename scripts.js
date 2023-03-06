@@ -112,12 +112,15 @@ function playRound(computerSelection, userSelection){
     return whoWon;
     }
 
+
     let userScore = 0;
     let computerScore = 0;
+
     document.getElementById('single-score-user').innerHTML = `Your score: ${userScore}`;
     document.getElementById('single-score-computer').innerHTML = `Machine's score: ${computerScore}`;
     document.querySelectorAll('.weapon-button').forEach(item => {
         item.addEventListener('click', function(){
+            document.getElementById('winner').innerHTML = '';
             if (userScore < 5 && computerScore < 5){
                 const computerSelection = getComputerChoice();
                 const userSelection = item.id;
@@ -135,9 +138,17 @@ function playRound(computerSelection, userSelection){
             }
             if (userScore == 5) {
                 document.getElementById('winner').innerHTML = 'YOU WON!'
+                userScore = 0;
+                computerScore = 0;
+                document.getElementById('single-score-user').innerHTML = `Your score: ${userScore}`;
+                document.getElementById('single-score-computer').innerHTML = `Machine's score: ${computerScore}`;
             }
             if (computerScore == 5){
                 document.getElementById('winner').innerHTML = 'YOU LOST!'
+                userScore = 0;
+                computerScore = 0;
+                document.getElementById('single-score-user').innerHTML = `Your score: ${userScore}`;
+                document.getElementById('single-score-computer').innerHTML = `Machine's score: ${computerScore}`;
             }  
         })
     });
