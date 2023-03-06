@@ -1,9 +1,4 @@
-/*  ROCK PAPER SCISSORS LIZARD SPOCK GAME    
-    STEPS:
-    1.  Get computer choice
-    2.  Get user's choice
-    3.  See who won - play round - if computer get scissors then check what user gets in a if else loop
-*/
+
 
 function getComputerChoice() {
     rand = Math.floor(Math.random() * 5);
@@ -116,44 +111,14 @@ function playRound(computerSelection, userSelection){
     }
     return whoWon;
     }
-    
-// computerSelection = getComputerChoice();
-// userSelection = "lizard";
-// console.log(computerSelection, userSelection)
-// console.log(playRound(computerSelection, userSelection));
 
-function game() {
-    computerScore = 0;
-    userScore = 0;
-    for (i = 0; i < 5; i++)
-    {
-        const computerSelection = getComputerChoice();
-        const userSelection = prompt("Choose your weapon (rock, paper, scissors, lizard, spock)");
-        console.log(computerSelection, userSelection);
-        round = playRound(computerSelection, userSelection.toLowerCase());
-        console.log(round);
+    document.querySelectorAll('.weapon-button').forEach(item => {
+        item.addEventListener('click', function(){
+            const computerSelection = getComputerChoice();
+            const userSelection = item.id;
+            console.log(computerSelection);
+            console.log(userSelection);
+            console.log(playRound(computerSelection, userSelection));
+        })
+    });
 
-        if (round.startsWith("You win")){
-            userScore += 1;
-        }
-        else if (round.startsWith("You loose")) {
-            computerScore += 1;
-        }
-
-        console.log(computerScore, userScore);
-    }
-
-    if (computerScore > userScore){
-        winner = "computer";
-    }
-    else if (computerScore < userScore){
-        winner = "user";
-    }
-    else {
-        winner = "Nobody"
-    }
-
-    console.log(winner + " is a winner!");
-}
-
-game();
