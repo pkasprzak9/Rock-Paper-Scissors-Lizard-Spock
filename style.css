@@ -1,0 +1,67 @@
+html,
+body {
+    height: 100%;
+}
+
+img {
+    width: 80px;
+}
+
+#container {
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+#title {
+    /* border-style: solid; */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#score {
+    /* border-style: solid; */
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+#weapon-tracker {
+    /* border-style: solid; */
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#chosen-weapons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 60px;
+}
+.chosen-weapon {
+    text-transform: uppercase;
+}
+#winner {
+    font-size: 30px;
+}
+
+
+#buttons {
+    /* border-style: solid; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#rules {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
