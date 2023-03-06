@@ -118,27 +118,27 @@ function playRound(computerSelection, userSelection){
     document.getElementById('single-score-computer').innerHTML = `Machine's score: ${computerScore}`;
     document.querySelectorAll('.weapon-button').forEach(item => {
         item.addEventListener('click', function(){
-            const computerSelection = getComputerChoice();
-            const userSelection = item.id;
-            document.getElementById('weaponUser').innerHTML = `You choose: ${item.id}`;
-            document.getElementById('weaponComputer').innerHTML = `Machine choose: ${computerSelection}`;
-            let winner = playRound(computerSelection, userSelection);
-            if (winner.startsWith("You win")){
-                document.getElementById('winner').innerHTML = 'You won!'
-                userScore++;
-                document.getElementById('single-score-user').innerHTML = `Your score: ${userScore}`;
+            if (userScore < 5 && computerScore < 5){
+                const computerSelection = getComputerChoice();
+                const userSelection = item.id;
+                document.getElementById('weaponUser').innerHTML = `You choose: ${item.id}`;
+                document.getElementById('weaponComputer').innerHTML = `Machine choose: ${computerSelection}`;
+                let winner = playRound(computerSelection, userSelection);
+                if (winner.startsWith("You win")){
+                    userScore++;
+                    document.getElementById('single-score-user').innerHTML = `Your score: ${userScore}`;
+                }
+                else if (winner.startsWith("You loose")){
+                    computerScore++;
+                    document.getElementById('single-score-computer').innerHTML = `Machine's score: ${computerScore}`;
+                }
             }
-            else if (winner.startsWith("You loose")){
-                document.getElementById('winner').innerHTML = 'You loose!'
-                computerScore++;
-                document.getElementById('single-score-computer').innerHTML = `Machine's score: ${computerScore}`;
+            if (userScore == 5) {
+                document.getElementById('winner').innerHTML = 'YOU WON!'
             }
-            else {
-                document.getElementById('winner').innerHTML = 'It\s a tie!'
-            }
-            // console.log(computerSelection);
-            // console.log(userSelection);
-            // console.log(playRound(computerSelection, userSelection));
+            if (computerScore == 5){
+                document.getElementById('winner').innerHTML = 'YOU LOST!'
+            }  
         })
     });
 
